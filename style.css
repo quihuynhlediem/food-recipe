@@ -1,0 +1,87 @@
+.general-info-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.heading2 {
+	font-size: 21px;
+	margin: 0 0 15px;
+	color: #0053a6;
+}
+
+.ingredient ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ingredient ul li {
+	line-height: 28px;
+	padding: 0 0 2px 0;
+	background: url(../images/li-bot-border.jpg) 0 bottom repeat-x;
+	list-style: inside none;
+	margin-left: 0;
+}
+
+.author-rating {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+  width: 40%;
+}
+
+.author-container {
+  width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content:flex-start;
+	align-items: flex-start;
+}
+
+.author-img {
+	display: block;
+	width: 40%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.author-info a {
+	font-size: 16px;
+	color: #484848;
+	line-height: 18px;
+	text-decoration: none;
+}
+
+.author-name {
+	margin: 0 0 5px;
+	color: #0053a6;
+	font-size: 16px;
+}
+/* Star rating styling */
+.rating {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.rating input {
+	display: none;
+}
+
+.rating label {
+	font-size: 25px;
+	color: gray;
+	cursor: pointer;
+	transition: color 0.2s ease-in-out; /* Simplify the transition property */
+	margin: 0 3px; /* Add some spacing between stars */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+	.rating label {
+		font-size: 24px; /* Reduce font size for smaller screens */
+	}
+}
