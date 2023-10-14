@@ -1,0 +1,78 @@
+/* Comment box styling */
+.comment_box {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #0053a6;
+	padding: 15px;
+	margin: 30px 60px;
+	margin-bottom: 20px;
+	background-color: #fff; /* Add a background color for readability */
+	border-radius: 5px; /* Add some border radius for a modern look */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+.comment_box_container {
+	display: flex;
+	flex-flow: row nowrap;
+	/* align-items: center; */
+}
+
+.user_avatar_cmt {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.form_container {
+	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.comment {
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #0053a6;
+	border-radius: 5px;
+	resize: none; /* Remove the resize handle on the textarea */
+}
+
+.button_container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.submit_btn {
+	background-color: #0053a6;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.cancel_btn {
+	background-color: #fff;
+	color: #0053a6;
+	padding: 10px 20px;
+	border: 1px solid #0053a6;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+	.comment_box {
+		padding: 15px; /* Slightly increase padding for better mobile appearance */
+	}
+
+	.rating label {
+		font-size: 24px; /* Reduce font size for smaller screens */
+	}
+}

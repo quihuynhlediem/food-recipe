@@ -3,14 +3,19 @@
 	margin: 10px 60px;
 	color: #0053a6;
 }
-.heading1 {
-	font-size: 30px;
-	margin: 10px 60px;
-	color: #0053a6;
-}
 
 .heading2 {
 	font-size: 21px;
 	margin: 0 0 15px;
 	color: #0053a6;
+}
+
+.heading3{
+	height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 0 2px;
+    margin: 0 0 20px;
+    color: #66a80f;
+    background: url(../public/li-bot-border.jpg) 0 30px repeat-x;
 }
