@@ -1,5 +1,5 @@
 /* Base styles for user comment */
-.user-comment {
+.user_comment {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 10px 60px;
@@ -9,47 +9,47 @@
 }
 
 /* Comment header */
-.comment-header {
+.comment_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.comment-user {
+.comment_user {
   display: flex;
   align-items: center;
 	width: 100%;
 }
 
-.comment-user img {
+.comment_user_img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.cmt-user-date {
+.cmt_user_date {
 	width: 100%;
   display: flex;
   flex-direction: row;
 	justify-content: space-between;
 }
 
-.comment-username {
+.comment_username {
 	font-weight: bold;
 	font-size: 16px;
 }
 
-.comment-date {
+.comment_date {
   color: #666;
 }
 
 /* Comment content */
-.comment-content {
+.comment_content {
   margin-top: 10px;
 }
 
-.comment-content p {
+.comment_content_main {
   font-size: 16px;
   margin: 0;
 }
@@ -58,19 +58,19 @@
 
 /* For even smaller screens, decrease the font size */
 @media (max-width: 576px) {
-  .comment-username {
+  .comment_username {
     font-size: 1em;
   }
 
-  .comment-date {
+  .comment_date {
     font-size: 0.9em;
   }
 
-  .comment-star {
+  .comment_star {
     font-size: 1em;
   }
 
-  .comment-content p {
+  .comment_content_main {
     font-size: 1em;
   }
 }
