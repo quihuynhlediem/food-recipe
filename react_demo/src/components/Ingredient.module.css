@@ -1,0 +1,13 @@
+.ingredient_list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ingredient_item {
+	line-height: 28px;
+	padding: 0 0 2px 0;
+	background: url(../../public/li-bot-border.jpg) 0 bottom repeat-x;
+	list-style: inside none;
+	margin-left: 0;
+}

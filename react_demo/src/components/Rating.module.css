@@ -1,0 +1,51 @@
+.rating_container {
+	width: 182px;
+	border: 1px solid #e0eece;
+	border-radius: 4px;
+	position: relative;
+	padding: 5px 20px 0 30px;
+	margin: 0 0 25px;
+	background-color: #ecf7de;
+}
+
+.rating_title {
+	font-size: 16px;
+	color: #696969;
+	margin: 6px 0 10px;
+}
+/* Star rating styling */
+.rating {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.rating input {
+	display: none;
+}
+
+.star_label, .star_label_comment {
+	font-size: 16px;
+	color: gray;
+	cursor: pointer;
+	transition: color 0.2s ease-in-out; /* Simplify the transition property */
+	margin: 0 3px; /* Add some spacing between stars */
+}
+
+.people_rating_number {
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+	.star_label, .star_label_comment {
+		font-size: 12px; /* Reduce font size for smaller screens */
+	}
+}
+
+.method_container {
+	margin: 20px 60px;
+}
