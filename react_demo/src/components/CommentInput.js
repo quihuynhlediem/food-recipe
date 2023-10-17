@@ -1,43 +1,29 @@
-import React, { useState } from "react";
-// import CommentShow from "./CommentShow";
 import styles from "./CommentInput.module.css";
 import avatarImg from "../images/user-avatar.png";
 
-function CommentInput() {
-	const [commentText, setCommentText] = useState("");
-  const [commentDate, setCommentDate] = useState("");
-  
-  const commentStoreHandler = (date, commentContent) => {
-    let commentData = (localStorage.getItem("commentData") === null) ? [] : JSON.parse(localStorage.getItem("commentData"));
-    const comment = {
-      date: date,
-      content: commentContent
-    }
-    commentData.push(comment);
-    localStorage.setItem("commentData", JSON.stringify(commentData));
-   };
-
-	const handleCommentSubmit = () => {
-		// You can access the commentText state to get the textarea value here
-    console.log("Comment submitted:", commentText);
-    
+function CommentInput(props) {
+	function handleCommentSubmit() {
 		let dt = new Date();
-		const day = dt.getDate();
-		const month = dt.getMonth() + 1; // Month is 0-based, so add 1 to get the actual month (1-12)
-    const year = dt.getFullYear();
-    setCommentDate(`${day}/${month}/${year}`);
-    console.log("Comment date:", commentDate);
+		let date =
+			dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+		let commentText = document.getElementById("commentContent").value;
+		props.updateCommentContent(commentText);
+		props.updateCommentDate(date);
 
-    commentStoreHandler(commentDate, commentText);
-    window.location.reload();
+		let commentData =
+			localStorage.getItem("commentData") === null
+				? []
+				: JSON.parse(localStorage.getItem("commentData"));
+		let comment = {
+			date: date,
+			content: commentText,
+		};
+		commentData.push(comment);
+		props.updateCommentData(commentData);
+		localStorage.setItem("commentData", JSON.stringify(commentData));
 
-    // return (
-    //   <CommentShow
-    //     commentDate={commentDate}
-    //     commentText={commentText}
-    //   />)
-    // Add logic to send the comment data to your server or perform other actions
-	};
+		document.getElementById("commentContent").value = "";
+	}
 
 	return (
 		<div className={styles.comment_box}>
@@ -46,9 +32,9 @@ function CommentInput() {
 				<form className={styles.form_container}>
 					<textarea
 						className={styles.comment}
+						id="commentContent"
 						name="comment"
 						placeholder="Note your cooking journey here"
-						onChange={(e) => setCommentText(e.target.value)}
 					></textarea>
 				</form>
 			</div>
