@@ -20,7 +20,9 @@ function Comment() {
 				<CommentShow
 					commentDate={comment.date}
 					commentContent={comment.content}
+					commentImage={comment.img}
 					key={index}
+					id={index}
 				/>
 			))}
 			;

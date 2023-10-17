@@ -42,7 +42,7 @@ function Rating() {
 					value="1"
 					onClick={ratingHandler}
 				/>
-				<label className={styles.star_label} for="star1">
+				<label className={styles.star_label} htmlFor="star1">
 					&#9733;
 				</label>
 				<input
@@ -52,7 +52,7 @@ function Rating() {
 					value="2"
 					onClick={ratingHandler}
 				/>
-				<label className={styles.star_label} for="star2">
+				<label className={styles.star_label} htmlFor="star2">
 					&#9733;
 				</label>
 				<input
@@ -62,7 +62,7 @@ function Rating() {
 					value="3"
 					onClick={ratingHandler}
 				/>
-				<label className={styles.star_label} for="star3">
+				<label className={styles.star_label} htmlFor="star3">
 					&#9733;
 				</label>
 				<input
@@ -72,7 +72,7 @@ function Rating() {
 					value="4"
 					onClick={ratingHandler}
 				/>
-				<label className={styles.star_label} for="star4">
+				<label className={styles.star_label} htmlFor="star4">
 					&#9733;
 				</label>
 				<input
@@ -82,7 +82,7 @@ function Rating() {
 					value="5"
 					onClick={ratingHandler}
 				/>
-				<label className={styles.star_label} for="star5">
+				<label className={styles.star_label} htmlFor="star5">
 					&#9733;
 				</label>
 			</div>
