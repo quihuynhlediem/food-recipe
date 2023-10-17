@@ -7,8 +7,6 @@ function CommentInput(props) {
 		let date =
 			dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
 		let commentText = document.getElementById("commentContent").value;
-		props.updateCommentContent(commentText);
-		props.updateCommentDate(date);
 
 		let commentData =
 			localStorage.getItem("commentData") === null

@@ -2,26 +2,26 @@ import React, { useEffect, useState } from "react";
 import styles from "./Rating.module.css";
 
 function Rating() {
-  const [rating, setRating] = useState(Number(localStorage.getItem("rating") || 0));
+	const [rating, setRating] = useState(0);
 
-  const ratingHandler = (event) => {
-    const rating = event.target.value;
-    localStorage.setItem("rating", rating);
-    window.location.reload();
-  }
+	const ratingHandler = (event) => {
+		const rating = event.target.value;
+		setRating(rating);
+		localStorage.setItem("rating", rating);
+	};
 
-  useEffect(() => {
-    // Change the color of labels with a value less than the rating value
-    const starLabels = document.querySelectorAll(`.${styles.star_label}`);
-    starLabels.forEach((label, index) => {
-      const labelValue = index + 1;
-      if (labelValue <= rating) {
-        label.style.color = "#0053a6";
-      } else {
-        label.style.color = "gray"; // Set the color for unselected stars
-      }
-    });
-  }, [rating]);
+	useEffect(() => {
+		// Change the color of labels with a value less than the rating value
+		const starLabels = document.querySelectorAll(`.${styles.star_label}`);
+		starLabels.forEach((label, index) => {
+			const labelValue = index + 1;
+			if (labelValue <= rating) {
+				label.style.color = "#0053a6";
+			} else {
+				label.style.color = "gray"; // Set the color for unselected stars
+			}
+		});
+	}, [rating]);
 
 	return (
 		<div className={styles.rating_container}>
@@ -35,23 +35,53 @@ function Rating() {
 			</div>
 			<p className={styles.rating_title}>Rate This Recipe</p>
 			<div className={styles.rating}>
-        <input type="radio" id="star1" name="rating" value="1" onClick={ratingHandler} />
+				<input
+					type="radio"
+					id="star1"
+					name="rating"
+					value="1"
+					onClick={ratingHandler}
+				/>
 				<label className={styles.star_label} for="star1">
 					&#9733;
 				</label>
-				<input type="radio" id="star2" name="rating" value="2" onClick={ratingHandler}/>
+				<input
+					type="radio"
+					id="star2"
+					name="rating"
+					value="2"
+					onClick={ratingHandler}
+				/>
 				<label className={styles.star_label} for="star2">
 					&#9733;
 				</label>
-				<input type="radio" id="star3" name="rating" value="3" onClick={ratingHandler}/>
+				<input
+					type="radio"
+					id="star3"
+					name="rating"
+					value="3"
+					onClick={ratingHandler}
+				/>
 				<label className={styles.star_label} for="star3">
 					&#9733;
 				</label>
-				<input type="radio" id="star4" name="rating" value="4" onClick={ratingHandler}/>
+				<input
+					type="radio"
+					id="star4"
+					name="rating"
+					value="4"
+					onClick={ratingHandler}
+				/>
 				<label className={styles.star_label} for="star4">
 					&#9733;
 				</label>
-				<input type="radio" id="star5" name="rating" value="5" onClick={ratingHandler}/>
+				<input
+					type="radio"
+					id="star5"
+					name="rating"
+					value="5"
+					onClick={ratingHandler}
+				/>
 				<label className={styles.star_label} for="star5">
 					&#9733;
 				</label>
