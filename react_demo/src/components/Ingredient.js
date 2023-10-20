@@ -14,7 +14,7 @@ import classes from "./DetailPage.module.css";
 // 	"1/2 cup sour cream (optional)",
 // ];
 
-const ingredients = localStorage.getItem("post-detail") ? JSON.parse(localStorage.getItem("post-detail")).ingredients : [];
+const ingredients = (localStorage.getItem("post-detail") === null) ? [] : JSON.parse(localStorage.getItem("post-detail")).ingredients;
 
 function Ingredient() {
 	return (

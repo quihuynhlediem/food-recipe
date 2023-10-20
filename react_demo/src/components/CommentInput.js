@@ -1,7 +1,8 @@
 import styles from "./CommentInput.module.css";
 import avatarImg from "../images/user-avatar.png";
-import { imgStorage } from "./Config";
+import { imgStorage, database } from "./Config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { set, onValue } from "firebase/database";
 import { useState } from "react";
 import { v4 } from "uuid";
 
@@ -30,6 +31,10 @@ function CommentInput(props) {
 				};
 				commentData.push(comment);
 				props.updateCommentData(commentData);
+				// let postId = localStorage.getItem("id");
+				// set(ref(database, `post-detail/${postId}`), {
+				// 	comments: commentData
+				// });
 				localStorage.setItem("commentData", JSON.stringify(commentData));
 			});
 		}, 1000);

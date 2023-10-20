@@ -1,12 +1,13 @@
-import './App.css';
-import DetailPage from "./components/DetailPage";
+import "./App.css";
+// import DetailPage from "./components/DetailPage";
+// import InputPage from "./components/InputPage";
+// import { Link } from "react-router-dom";
+import RoutesPage from "./components/RoutesPage";
 
 function App() {
-  return (
-    <>
-      <DetailPage />
-    </>
-  );
+	return (
+		<RoutesPage />
+	);
 }
 
 export default App;
