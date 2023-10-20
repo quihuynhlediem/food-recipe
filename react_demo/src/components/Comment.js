@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import CommentInput from "./CommentInput";
 import CommentShow from "./CommentShow";
-import { onValue, ref } from "firebase/database";
-import { database } from "./Config";
+// import { onValue, ref } from "firebase/database";
+// import { database } from "./Config";
 
 function Comment() {
 

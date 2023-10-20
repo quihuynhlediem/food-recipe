@@ -1,8 +1,9 @@
 import styles from "./CommentInput.module.css";
 import avatarImg from "../images/user-avatar.png";
-import { imgStorage, database } from "./Config";
+import { imgStorage } from "./Config";
+// import { database } from "./Config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { set, onValue } from "firebase/database";
+// import { set, onValue } from "firebase/database";
 import { useState } from "react";
 import { v4 } from "uuid";
 
