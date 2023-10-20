@@ -1,4 +1,4 @@
-/* .heading1 {
+.heading1 {
 	font-size: 30px;
 	margin: 10px 60px;
 	color: #0053a6;
@@ -17,5 +17,5 @@
     padding: 0 0 2px;
     margin: 0 0 20px;
     color: #66a80f;
-    background: url(../public/li-bot-border.jpg) 0 30px repeat-x;
-} */
+    background: url(../../public/li-bot-border.jpg) 0 30px repeat-x;
+}
