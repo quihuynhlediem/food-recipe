@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Post from "./Post";
 import NewPost from "./NewPost";
 import Modal from "./Modal";
@@ -37,7 +36,20 @@ function PostsList({ isPosting, onStopPosting }) {
 		setPostId((existedPostId) => [...existedPostId, postId]);
 		set(ref(database, `post-detail/${postId}`), newPostDetail);
 		set(ref(database, `posts/${postId}`), newPostData);
-  };
+	};
+	
+	const deletePostHandler = (event) => {
+		let postId = event.target.id;
+		setPosts((existedPost) => {
+			return existedPost.filter((post) => post.id !== postId);
+		});
+		setPostId((existedPostId) => {
+			return existedPostId.filter((id) => id !== postId);
+		}
+		);
+		set(ref(database, `post-detail/${postId}`), null);
+		set(ref(database, `posts/${postId}`), null);
+	}
   
   const setPostIdHandler = (event) => {
     localStorage.setItem("id", event.target.id);
@@ -60,14 +72,14 @@ function PostsList({ isPosting, onStopPosting }) {
 			) : (
 				<ul className={classes.posts}>
 					{posts.map((postItem, index) => (
-            <Link onClick={setPostIdHandler} style={{textDecoration: "none"}} to="/">
-							<Post
-								id={postId[index]}
-								key={index}
-								author={postItem.author}
-								body={postItem.title}
-							/>
-						</Link>
+						<Post
+							id={postId[index]}
+							key={index}
+							author={postItem.author}
+							body={postItem.title}
+							onOpen={setPostIdHandler}
+							onDelete={deletePostHandler}
+						/>
 					))}
 				</ul>
 			)}
