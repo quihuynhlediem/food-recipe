@@ -8,7 +8,6 @@ import { ref, set, onValue } from "firebase/database";
 import { v4 } from "uuid";
 
 function PostsList({ isPosting, onStopPosting }) {
-	localStorage.setItem("id", "fcdf3207-a2a4-4213-bbee-b1ef68c7c7a5");
 	onValue(ref(database, "posts"), (snapshot) => {
     const data = snapshot.val() === null ? [] : snapshot.val();
     // if (data === null) {
@@ -50,6 +49,7 @@ function PostsList({ isPosting, onStopPosting }) {
 		);
 		set(ref(database, `post-detail/${postId}`), null);
 		set(ref(database, `posts/${postId}`), null);
+		window.location.href = "/";
 	}
   
   const setPostIdHandler = (event) => {
