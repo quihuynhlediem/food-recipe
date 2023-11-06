@@ -53,9 +53,18 @@ function PostsList({ isPosting, onStopPosting }) {
 	}
   
   const setPostIdHandler = (event) => {
-    localStorage.setItem("id", event.target.id);
-    // console.log(event.target.id);
-    window.location.href = "/detail";
+		localStorage.setItem("id", event.target.id);
+		onValue(
+			ref(database, "post-detail/" + localStorage.getItem("id")),
+			(snapshot) => {
+				const data = JSON.stringify(snapshot.val());
+				localStorage.setItem("post-detail", data);
+			}
+		);
+		// console.log(event.target.id);
+		setTimeout(() => {
+			window.location.href = "/detail";
+		}, 200);
   }
 
 	return (

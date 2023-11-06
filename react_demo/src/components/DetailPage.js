@@ -6,13 +6,13 @@ import { database } from "./Config";
 import { ref, onValue } from "firebase/database";
 
 function DetailPage() {
-	onValue(
-		ref(database, "post-detail/" + localStorage.getItem("id")),
-		(snapshot) => {
-			const data = JSON.stringify(snapshot.val());
-			localStorage.setItem("post-detail", data);
-		}
-	);
+	// onValue(
+	// 	ref(database, "post-detail/" + localStorage.getItem("id")),
+	// 	(snapshot) => {
+	// 		const data = JSON.stringify(snapshot.val());
+	// 		localStorage.setItem("post-detail", data);
+	// 	}
+	// );
 
 	let title = JSON.parse(localStorage.getItem("post-detail")).title;
 	return (
